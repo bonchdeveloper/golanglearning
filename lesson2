@@ -1,6 +1,9 @@
 package main // указываем пакет, где находится файл
 
-import "fmt" // импортирование библиотеки
+import (
+	"fmt" // импортирование библиотеки
+	"math"
+)
 
 func main() { // точка входа в программу
 	var num int8
@@ -12,5 +15,35 @@ func main() { // точка входа в программу
 		fmt.Println("Нет, это число меньше моего")
 	} else if num > 3 {
 		fmt.Println("Нет, это число больше моего")
+	}
+
+	// квадратное уравнение
+	fmt.Println("Я помогу тебе вычислить Дискриминант и найти корни квадратного уравнения, напиши коэффициенты")
+
+	var a float64
+	fmt.Println("коэффициент а = ")
+	fmt.Scan(&a)
+
+	var b float64
+	fmt.Println("коэффициент b = ")
+	fmt.Scan(&b)
+
+	var c float64
+	fmt.Println("коэффициент c = ")
+	fmt.Scan(&c)
+
+	D := b*b - 4*a*c
+	fmt.Println("Дискриминант = " + fmt.Sprint(D))
+
+	if D == 0 {
+		x := (-b / (2 * a))
+		fmt.Println("Корень уравнения x = " + fmt.Sprint(x))
+	} else if D > 0 {
+		x1 := (-b - math.Sqrt(D)) / (2 * a)
+		x2 := (-b + math.Sqrt(D)) / (2 * a)
+		fmt.Println("Корень уравнения x1 = " + fmt.Sprint(x1))
+		fmt.Println("Корень уравнения x2 = " + fmt.Sprint(x2))
+	} else if D < 0 {
+		fmt.Println("Действительных корней нет!")
 	}
 }
