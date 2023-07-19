@@ -1,0 +1,36 @@
+package main // указываем пакет, где находится файл
+
+import "fmt" // импортирование библиотеки
+
+func main() { // точка входа в программу
+
+	fmt.Println("Hello world!") // вывод текста
+
+	var age_evgeniy uint8 = 22 // объявляем переменную
+	fmt.Println(age_evgeniy)   // вывод переменной
+
+	var number float64 = 333.212 // число с плавяющей точкой
+	fmt.Println(number)          // вывод числа с плавающей точкой
+
+	age_nikita := 15 // операция присваивания
+	fmt.Println(age_nikita)
+
+	var name string = "Dima" // строковые переменные
+	fmt.Println(name)        // вывод
+	fmt.Println(len(name))   // len - помогает узнать длину строки
+
+	// приём ввода от пользователя
+	var question string
+	var age uint8
+	fmt.Println("What is your name? ")
+	fmt.Scan(&question) // не забыть указатель поставить (&)
+	fmt.Println("How old are you? " + question + "!")
+	fmt.Scan(&age)
+	fmt.Println("You are " + fmt.Sprint(age) + " years!") // нельзя написать просто age поскольку числа конфликтуют с текстом, поэтмоу надо использовать функцию fmt.Sprint()
+}package main // указываем пакет, где находится файл
+
+import "fmt" // импортирование библиотеки
+
+func main() { // точка входа в программу
+	fmt.Println("Hello world!") // вывод текста
+}
